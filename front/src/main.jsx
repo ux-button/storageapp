@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
 import { ProductPage } from "./pages/ProductPage.jsx";
 import { StoragePage } from "./pages/StoragePage.jsx";
 import "./index.css";
+import { EditProductPage } from "./pages/EditProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/product",
     element: <ProductPage />,
+  },
+  {
+    path: "/edit",
+    element: <EditProductPage />,
   },
 ]);
 
