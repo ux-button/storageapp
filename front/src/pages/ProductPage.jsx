@@ -2,11 +2,13 @@ import { Button } from "../components/common/Button";
 
 const ProductPage = ({ isFavorite }) => {
   return (
-    <>
+    <div className="m-6">
       <div className="">
         <h1 className="text-3xl">Product attracting name</h1>
-        <div className="flex p-4 rounded-xl space-x-2 bg-zinc-100">
-          <Button text="Edit product" />
+        <div className="flex p-4 rounded-xl space-x-2 bg-zinc-200">
+          <a className="block" href="/edit">
+            <Button text="Edit product" />
+          </a>
           <Button text="Delete" />
         </div>
         <h2>Category: Goods for home</h2>
@@ -18,7 +20,7 @@ const ProductPage = ({ isFavorite }) => {
         </p>
         <a href="/">To home</a>
       </div>
-    </>
+    </div>
   );
 };
 
