@@ -1,0 +1,3 @@
+const ProductGroup = () => {};
+
+export { ProductGroup };

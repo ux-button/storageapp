@@ -1,7 +1,7 @@
 const { pool } = require("../db/pool");
 
 const getProductsTitle = async () => {
-  const { rows } = await pool.query("SELECT id, name FROM products");
+  const { rows } = await pool.query("SELECT id, name, quantity FROM products");
   return rows;
 };
 

@@ -1,12 +1,21 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+
+const corsOptions = {
+  origin: "http://localhost:5173",
+};
 
 const {
   getProductsShort,
   getProductsFull,
 } = require("./controllers/productsController");
 
+// Addons
 app.use(express.json());
+app.use(cors(corsOptions));
+
+// Add controllers
 app.use(getProductsShort, getProductsFull);
 
 app.get("/api/products", getProductsShort);
@@ -18,6 +27,7 @@ app.use((err, req, res, next) => {
 });
 
 // Server listener
+// Port 5123
 app.listen(5123, () => {
   console.log("Server running in port 5123...");
 });
