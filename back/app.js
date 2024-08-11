@@ -9,6 +9,7 @@ const corsOptions = {
 const {
   getProductsShort,
   getProductsFull,
+  postNewProduct,
 } = require("./controllers/productsController");
 
 // Addons
@@ -16,8 +17,9 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 // Add controllers
-app.use(getProductsShort, getProductsFull);
+//app.use(getProductsShort, getProductsFull, postNewProduct);
 
+app.post("/api/new", postNewProduct);
 app.get("/api/products", getProductsShort);
 app.get("/api/products/:id", getProductsFull);
 

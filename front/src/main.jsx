@@ -5,6 +5,7 @@ import { ProductPage } from "./pages/ProductPage.jsx";
 import { StoragePage } from "./pages/StoragePage.jsx";
 import "./index.css";
 import { EditProductPage } from "./pages/EditProductPage.jsx";
+import { NewProductPage } from "./pages/NewProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,16 @@ const router = createBrowserRouter([
     element: <StoragePage />,
   },
   {
-    path: "/product",
+    path: "/product/:id",
     element: <ProductPage />,
   },
   {
     path: "/edit",
     element: <EditProductPage />,
+  },
+  {
+    path: "/new",
+    element: <NewProductPage />,
   },
 ]);
 

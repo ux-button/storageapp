@@ -7,6 +7,7 @@ const Input = ({ name, value, label, placeholder, handleChange }) => {
         autoComplete="off"
         name={name}
         value={value}
+        onChange={(e) => handleChange(e.target.value)}
         placeholder={placeholder}
         className="p-2 border border-zinc-300 rounded-xl"
       />
