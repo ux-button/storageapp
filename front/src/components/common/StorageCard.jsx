@@ -7,7 +7,7 @@ const StorageCard = ({ itemName, itemQuantity, id }) => {
         <h3 className="text-xl">{itemName}</h3>
         <p className="text-sm text-slate-400">Quantity: {itemQuantity}</p>
       </a>
-      <a className="block" href="/edit">
+      <a className="block" href={`/edit/${id}`}>
         <Button text="Edit" />
       </a>
     </div>

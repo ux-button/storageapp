@@ -37,4 +37,31 @@ const postNewProduct = async (req, res, next) => {
   }
 };
 
-module.exports = { getProductsShort, getProductsFull, postNewProduct };
+const editProduct = async (req, res, next) => {
+  const { id } = req.params;
+  const { name, category, material, discription } = req.body;
+  if (!name || !category || !material || !discription) {
+    res.status(400).end();
+  }
+  const quantity = 1;
+  try {
+    await query.editProduct(
+      id,
+      name,
+      category,
+      material,
+      discription,
+      quantity
+    );
+    res.status(201).end();
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = {
+  getProductsShort,
+  getProductsFull,
+  postNewProduct,
+  editProduct,
+};

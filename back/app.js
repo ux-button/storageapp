@@ -10,6 +10,7 @@ const {
   getProductsShort,
   getProductsFull,
   postNewProduct,
+  editProduct,
 } = require("./controllers/productsController");
 
 // Addons
@@ -22,6 +23,7 @@ app.use(cors(corsOptions));
 app.post("/api/new", postNewProduct);
 app.get("/api/products", getProductsShort);
 app.get("/api/products/:id", getProductsFull);
+app.put("/api/edit/:id", editProduct);
 
 // Error hendler
 app.use((err, req, res, next) => {

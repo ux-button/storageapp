@@ -21,7 +21,7 @@ const useFetchOne = (id) => {
     fetchData();
   }, []);
 
-  return [product];
+  return product;
 };
 
 export { useFetchOne };
